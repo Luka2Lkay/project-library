@@ -1,7 +1,8 @@
 
 const subBtn = document.getElementById('submit');
-const myForm= document.getElementById('my_form');
+const myForm = document.getElementById('my_form');
 const addBtn = document.getElementById('add_btn')
+const cancelBtn = document.getElementById('cancel')
 const libraryContainer = document.getElementById('show_library')
 
 
@@ -10,51 +11,55 @@ const libraryContainer = document.getElementById('show_library')
 let myLibrary = [];
 
 /*Book constructor*/
-function Book(title, author, pages, read){
-    this.title =  title;
+function Book(title, author, pages, read) {
+    this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
-    }
+}
 
 
 
 /*shows the form when you click on the add button and clear the input fields when you click Cancel*/
-    function showHideForm(){
-    if(myForm.style.display==='block'){
-        myForm.style.display='none';
-        
-    }else{
-        myForm.style.display='block';
+function showHideForm() {
+    if (addBtn) {
+        myForm.style.display = 'block';
+
     }
 
-    if(addBtn.value==='Add Book'){
-        addBtn.value= 'Cancel'
-        myForm.reset();
-    }else{
-        addBtn.value = 'Add Book';
+    if (addBtn) {
+        addBtn.style.display = 'none';
+
     }
 }
 
+cancelBtn.addEventListener('click', (e) => {
+    addBtn.style.display = 'block';
+    myForm.style.display = 'none';
+    myForm.reset();
+
+
+})
 
 /* Hide the form when your click submit*/
-    myForm.addEventListener('submit', (e) =>{
-        e.preventDefault();
-  
-        /* when the submit button is clicked, addBtn value changes from Cancel to Add Book*/
-        if(subBtn){
+myForm.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-            if(addBtn.value==='Add Book'){
-                addBtn.value = 'Cancel'
-                myForm.reset();
-            }   else   {
-                    addBtn.value = 'Add Book';
-        }
-        
+    /* when the submit button is clicked, addBtn value changes from Cancel to Add Book*/
+    if (subBtn) {
+
+        addBtn.style.display = 'block';
+        /*if (addBtn.value === 'Add Book') {
+            addBtn.value = 'Cancel'
+            myForm.reset();
+        } else {
+            addBtn.value = 'Add Book';
+        }*/
+
         /* The form becomes invisible*/
-        myForm.style.display= 'none';
+        myForm.style.display = 'none';
 
-    }   
+    }
 
 
     /* argument for addBookToLibrary*/
@@ -67,16 +72,16 @@ function Book(title, author, pages, read){
 
     /*render new book on submission*/
     addBookToLibrary(newBook)
-    
+
     myForm.reset();
-    
+
 })
 
-const addBookToLibrary = (myBook) =>{
+const addBookToLibrary = (myBook) => {
 
     let formDiv = document.createElement('form')
     formDiv.classList.add('toggle_remove');
-    
+
     /* buttons to delete book button*/
     let removeBtn = document.createElement('input');
     removeBtn.setAttribute('type', 'button');
@@ -97,66 +102,66 @@ const addBookToLibrary = (myBook) =>{
 
     /* seperate book entries*/
 
-const containerDiv = document.createElement('div');
-containerDiv.classList.add('bookContainer');
+    const containerDiv = document.createElement('div');
+    containerDiv.classList.add('bookContainer');
 
-/* append containerDiv to libraryContainer*/
+    /* append containerDiv to libraryContainer*/
 
-libraryContainer.appendChild(containerDiv);
+    libraryContainer.appendChild(containerDiv);
 
-/*display book details*/
+    /*display book details*/
 
-for(const[key,value] of Object.entries(myBook)){
-    /* create a P element for every detail*/
+    for (const [key, value] of Object.entries(myBook)) {
+        /* create a P element for every detail*/
 
-    const pNode = document.createElement('p');
-    /*logic for displaying book information on screen*/
+        const pNode = document.createElement('p');
+        /*logic for displaying book information on screen*/
 
-    if(key==='pages'){
-        pNode.innerHTML = `<strong>Pages</strong>: ${value}`;
-        pNode.classList.add('num_pages');
-    } 
-    
-    else if(key === 'read'){
-        if(value){
-            readBtn.value = 'Read: Yes';
-            readBtn.style.background = 'lightgreen'
-        }else {
-            readBtn.value = 'Read: No';
-            readBtn.style.background = 'red'
+        if (key === 'pages') {
+            pNode.innerHTML = `<strong>Pages</strong>: ${value}`;
+            pNode.classList.add('num_pages');
         }
-    }
 
-    else if(key === 'author'){
-        pNode.innerHTML = `<strong>Author</strong>: ${value}`;
-        pNode.classList.add('book_author');
-    }else{
-        pNode.innerHTML = `<strong>Title</strong>: ${value}`;
-        pNode.classList.add('book_title');
-    }
+        else if (key === 'read') {
+            if (value) {
+                readBtn.value = 'Read: Yes';
+                readBtn.style.background = 'lightgreen'
+            } else {
+                readBtn.value = 'Read: No';
+                readBtn.style.background = 'orange'
+            }
+        }
+
+        else if (key === 'author') {
+            pNode.innerHTML = `<strong>Author</strong>: ${value}`;
+            pNode.classList.add('book_author');
+        } else {
+            pNode.innerHTML = `<strong>Title</strong>: ${value}`;
+            pNode.classList.add('book_title');
+        }
 
         pNode.classList.add("bookDetail")
         containerDiv.append(pNode)
         containerDiv.append(readBtn)
-}
+    }
 
     containerDiv.appendChild(removeBtn);
 
-       /*remove book*/
+    /*remove book*/
 
-    removeBtn.addEventListener('click', () =>{
+    removeBtn.addEventListener('click', () => {
         containerDiv.remove();
     })
 
     /*toggle read button*/
 
     readBtn.addEventListener('click', () => {
-        if(readBtn.value === 'Read: No'){
+        if (readBtn.value === 'Read: No') {
             readBtn.style.background = 'lightgreen';
             readBtn.value = 'Read: Yes';
-        } else if(readBtn.value === 'Read: Yes'){
+        } else if (readBtn.value === 'Read: Yes') {
             readBtn.value = 'Read: No';
-            readBtn.style.background = 'red'
+            readBtn.style.background = 'orange'
         }
 
     })
