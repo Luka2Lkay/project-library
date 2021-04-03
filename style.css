@@ -12,14 +12,12 @@ body{
     width: 30%;
     margin: 0 auto;
     position: relative;
-    padding-top: 20px;
-    
+    padding-top: 20px;    
 }
 
 #form_buttons{
     display: flex;
 }
-
 
 #my_form{
     display: none;
@@ -27,9 +25,7 @@ body{
     margin-right: auto;
     width: 50%;
     padding-right: 50px;
-
 }
-
 
 #add_btn{
     margin: 0;
@@ -45,12 +41,10 @@ h1{
     text-align: center;
     color: gold;
     font-family: allan, Arial, Helvetica, sans-serif;
-    font-size: 4em;
-    
+    font-size: 4em;    
 }
 
-.bookContainer{
-   /* border: 1px solid rebeccapurple;*/
+.book_card{
     border-radius: 10%;
     background-color: black;
     margin-right: 10px;
@@ -75,55 +69,49 @@ h1{
     margin-left: 30px;
     margin-top: 20px;
     font-size: 20px;
-
 }
 label{
     color: gold;
     font-size: 25px;
     font-weight: 700;
-    
 }
 
-.num_pages, .book_author, .book_title{
+.book_pages, .book_author, .book_title{
     color: gold;
 }
 
-.delete:hover{
+.remove_button:hover{
+    background-color:red;
+    color:white;
+    font-size: 17px;    
+}
+
+.read_button:hover{
     background-color:red;
     color:white;
     font-size: 17px;
-    
 }
 
-.readBtn_style:hover{
-    background-color:red;
-    color:white;
-    font-size: 17px;
-}
-
-.delete{
+.remove_button{
     margin-left:90px;
     font-size: 18px;
     padding: 5px;
 }
 
-.readBtn_style{
+.read_button{
     font-size: 18px;
     padding: 7px;
-   
 }
 
-
-
-.readBtn_style, .book_author, .num_pages, .book_title{
+.read_button, .book_author, .book_pages, .book_title{
     margin-left: 10px;
+    font-size: 20px;
 }
-
-
 
 #read_form{
     display: flex;
 }
+
 input[type='text'], input[type='number']{
     font-size: 20px;
 }
@@ -138,7 +126,6 @@ input[type='text'], input[type='number']{
         margin-left: 100px;
     }
 }
-
 
 @media screen and (max-width: 600px){
  
