@@ -61,8 +61,9 @@ myForm.addEventListener('submit', (e) => {
     let newBook = new Book(title, author, pages, read);
 
     //push newBook into myLibrary
+
     myLibrary.push(newBook);
-   
+  
     //render new book on submission
     addToLocalStorage(myLibrary);
     updateLibrary();
@@ -97,9 +98,9 @@ const renderBook = (book) =>{
     bookPagesPara.classList.add('book_pages');
     bookReadPara.classList.add('read');
 
-    bookTitlePara.innerHTML = `<strong>Title</straong>: ${book.title}`;
+    bookTitlePara.innerHTML = `<strong>Title</strong>: ${book.title}`;
     bookAuthorPara.innerHTML = `<strong>Author</strong>: ${book.author}`;
-    bookPagesPara.innerHTML = `<strong>Pages: ${book.pages}`;
+    bookPagesPara.innerHTML = `<strong>Pages</strong>: ${book.pages}`;
 
     removeBtn.innerText = 'REMOVE';
 
