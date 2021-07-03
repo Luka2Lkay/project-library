@@ -1,11 +1,16 @@
 body{
-    background-image: url('images/book2.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
     width: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html{
+    background-image: url('images/book2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
 }
 
 .section{
@@ -21,8 +26,7 @@ body{
 
 #my_form{
     display: none;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 55px;
     width: 50%;
     padding-right: 50px;
 }
@@ -37,11 +41,12 @@ body{
     font-size: 20px;
 }
 
-h1{
+.title{
     text-align: center;
     color: gold;
     font-family: allan, Arial, Helvetica, sans-serif;
     font-size: 4em;    
+
 }
 
 .book_card{
@@ -50,6 +55,7 @@ h1{
     margin-right: 10px;
     margin-top: 10px;
     min-width: 250px;
+    max-width: 250px;
     padding: 0px 5px 10px 0px;
 }
 
@@ -82,27 +88,26 @@ label{
 
 .remove_button:hover{
     background-color:red;
-    color:white;
-    font-size: 17px;    
+    color:white;   
 }
 
 .read_button:hover{
-    background-color:red;
-    font-size: 17px;
+    color: gold;
 }
 
 .remove_button{
     margin-left:90px;
-    font-size: 18px;
+    font-size: 13px;
     padding: 5px;
 }
 
 .read_button{
-    font-size: 18px;
+    font-size: 10px;
+    margin-left: 13px;
     padding: 7px;
 }
 
-.read_button, .book_author, .book_pages, .book_title{
+.book_author, .book_pages, .book_title{
     margin-left: 10px;
     font-size: 20px;
 }
@@ -115,35 +120,65 @@ input[type='text'], input[type='number']{
     font-size: 20px;
 }
 
-@media screen and (max-width: 506px){
+@media only screen and (max-width: 1024px) {
     #my_form{
-        margin-left: -115px;
-        
-    }
-
-    h1{
-        margin-left: 100px;
+        margin-left: -0.2em;
     }
 }
 
-@media screen and (max-width: 600px){
- 
-    #read{
-        margin-top: 20px;
+@media only screen and (max-width: 768px){
+    #my_form{
+        margin-left: -2em;
+    }  
+}
+
+@media only screen and (max-width: 425px){
+    #my_form{
+        margin-left: -70px;
+    }  
+
+    .title{
+        font-size: 35px;
     }
-  #my_form{
-        margin-left: -30px;
+
+    .book_card{
+        margin-left: 30px;
+    }
+
+    .remove_button{
+        font-size: 12px;
+    }
+
+    .read_button{
+        font-size: 12px;
     }
 }
 
-@media screen and (max-width: 700px){
+@media only screen and (max-width: 375px){
     #my_form{
-        margin-left: -80px;
-    }
+        margin-left: -70px;
+    }    
 }
 
-@media screen and (max-width: 1000px){
+@media only screen and (max-width: 320px){
+    .title{
+        font-size: 25px;
+    }
+
+    .book_card{
+        width: 50px;
+    }
+
+    .remove_button{
+        font-size: 10px;
+    }
+
+    .read_button{
+        font-size: 10px;
+    }
+
     #my_form{
-        margin-left: -2px;
+        margin-left: -90px;
+        width: 20%;
     }
 }

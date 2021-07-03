@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Project</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Allan:wght@700&display=swap" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <link href="style.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>
 
-    <h1>Book Library</h1>
-<div class='section'>
+    <h1 class = 'title'>Book Library</h1>
+    <div class='section'>
     
-
     <form class='test'>
-    <input type='button' onclick="showHideForm()" value='Add Book' id='add_btn'>
+        <input type='button' onclick="showHideForm()" value='Add Book' id='add_btn'>
     </form>
 
     <p id='paras'></p>
 
-    
     <form action="#" id='my_form'>
         
         <input type="text" name="title" id='title' placeholder="TITLE" required><br><br>
@@ -34,16 +35,9 @@
             <input type='submit' value="SUBMIT" id='submit' required>
             <input type="button" value="CANCEL" id="cancel" >
         </div>
-        
-
     </form>
 </div>
-
-
 <div id="show_library"></div>
-
-
 <script src="script.js"></script>    
 </body>
-
 </html>
