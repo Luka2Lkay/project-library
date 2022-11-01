@@ -24,11 +24,35 @@ html{
     display: flex;
 }
 
+.read_button:hover{
+    color: gold;
+}
+
+.remove_button{
+    margin-left: 90px;
+    font-size: 1em;
+    padding: 5px;
+    font-weight: 600;
+    background-color: red;
+    color: #fff;
+}
+
+.read_button{
+    font-size: 1em;
+    margin-left: 15px;
+    padding: 5px 15px 5px 15px;
+    font-weight: 600;
+    color: #fff;
+}
+
+
 #my_form{
     display: none;
     margin-left: 55px;
     width: 50%;
-    padding-right: 50px;
+    padding: 4em 6em 3em 2em;
+    background-color: #000;
+    box-shadow: 0px 6px 10px 0px #fff;
 }
 
 #add_btn{
@@ -41,22 +65,21 @@ html{
     font-size: 20px;
 }
 
-.title{
+h1{
     text-align: center;
     color: gold;
     font-family: allan, Arial, Helvetica, sans-serif;
-    font-size: 4em;    
-
+    font-size: 4em;   
 }
 
 .book_card{
-    border-radius: 10%;
     background-color: black;
     margin-right: 10px;
     margin-top: 10px;
-    min-width: 250px;
-    max-width: 250px;
+    min-width: 18em;
     padding: 0px 5px 10px 0px;
+    box-shadow: 0px 6px 10px 0px #fff;
+    word-wrap: break-word;
 }
 
 #show_library{
@@ -69,12 +92,18 @@ html{
     margin-left: 30px;
     margin-top: 20px;
     font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    background-color: green;
 }
 
 #cancel{
     margin-left: 30px;
     margin-top: 20px;
     font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    background-color: red;
 }
 label{
     color: gold;
@@ -86,29 +115,29 @@ label{
     color: gold;
 }
 
-.remove_button:hover{
-    background-color:red;
-    color:white;   
+
+
+
+
+
+.title, .author, .pages {
+    color: #fff;
+} 
+
+.title{
+    margin-right: 4em;
 }
 
-.read_button:hover{
-    color: gold;
+.author{
+    margin-right: 3em;
 }
 
-.remove_button{
-    margin-left:90px;
-    font-size: 13px;
-    padding: 5px;
-}
-
-.read_button{
-    font-size: 10px;
-    margin-left: 13px;
-    padding: 7px;
+.pages{
+    margin-right: 3.8em;
 }
 
 .book_author, .book_pages, .book_title{
-    margin-left: 10px;
+    margin-left: 2em;
     font-size: 20px;
 }
 
@@ -116,8 +145,12 @@ label{
     display: flex;
 }
 
-input[type='text'], input[type='number']{
+#title, #author, #pages{
     font-size: 20px;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    outline: none;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -137,9 +170,6 @@ input[type='text'], input[type='number']{
         margin-left: -70px;
     }  
 
-    .title{
-        font-size: 35px;
-    }
 
     .book_card{
         margin-left: 30px;
@@ -161,9 +191,7 @@ input[type='text'], input[type='number']{
 }
 
 @media only screen and (max-width: 320px){
-    .title{
-        font-size: 25px;
-    }
+
 
     .book_card{
         width: 50px;
