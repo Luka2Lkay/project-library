@@ -117,11 +117,6 @@ label {
     color: gold;
 }
 
-
-
-
-
-
 .title,
 .author,
 .pages {
@@ -162,14 +157,36 @@ label {
 }
 
 @media only screen and (max-width: 1024px) {
-    #my_form {
-        margin-left: -0.2em;
+
+    #title,
+    #author,
+    #pages {
+        font-size: 20px;
+        border-radius: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 9.5em;
+        outline: none;
     }
+
+    #submit,
+    #cancel {
+        margin-left: 10px;
+    }
+
 }
 
 @media only screen and (max-width: 768px) {
     #my_form {
         margin-left: -2em;
+        padding-right: 8em;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    #my_form {
+        margin-left: -2em;
+        padding-right: 11em;
     }
 }
 
@@ -216,5 +233,14 @@ label {
     #my_form {
         margin-left: -90px;
         width: 20%;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+
+
+    #my_form {
+        padding-right: 13.3em;
+
     }
 }
